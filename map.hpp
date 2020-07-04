@@ -33,10 +33,10 @@ private:
     //___l=r :  0___
     //___l>r :  1___
     inline int compare(const Key &left, const Key &right) const{
-		if(comparator(left, right))  return -1;
-		else if(comparator(right, left))  return 1;
-		else return 0;
-	}
+        if(comparator(left, right))  return -1;
+        if(comparator(right, left))  return 1;
+        return 0;
+    }
 
     static unsigned long ModMul(unsigned long n1, unsigned long n2){
         unsigned long ans=0;
