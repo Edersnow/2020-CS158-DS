@@ -68,7 +68,7 @@ private:
             {pri=random_number_generator();}
 
         treapnode(const treapnode &other):
-            treapnode(other.data)
+            data(other.data)
             {pri=other.pri;}
     };
     treapnode *root;
@@ -94,8 +94,8 @@ private:
     treapnode* find_node(treapnode *cur, const Key &key){
         if(cur==nullptr)  return cur;
         switch (compare(cur->data.first, key)){
-            case 0:  return cur;break;
-            case 1:  return find_node(cur->left, key);break;
+            case 0:  return cur;
+            case 1:  return find_node(cur->left, key);
         }
         return find_node(cur->right, key);
     }
@@ -103,8 +103,8 @@ private:
     const treapnode* find_node(const treapnode *cur, const Key &key) const{
         if(cur==nullptr)  return nullptr;
         switch (compare(cur->data.first, key)){
-            case 0:  return cur;break;
-            case 1:  return find_node(cur->left, key);break;
+            case 0:  return cur;
+            case 1:  return find_node(cur->left, key);
         }
         return find_node(cur->right, key);
     }
@@ -124,8 +124,8 @@ private:
     treapnode*& find_deletion(treapnode *&cur, const Key &key){
         if(cur==nullptr)  return cur;
         switch (compare(cur->data.first, key)){
-            case 0:  return cur;break;
-            case 1:  return find_deletion(cur->left, key);break;
+            case 0:  return cur;
+            case 1:  return find_deletion(cur->left, key);
         }
         return find_deletion(cur->right, key);
     }
