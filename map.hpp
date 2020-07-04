@@ -413,8 +413,8 @@ public:
         return res;
     }
 
-    //erase function won't change other nodes' location (except the deleted node)
-    //so it won't cause iterator failure
+    //erase function won't change other nodes' addresses (except the deleted node)
+    //so it won't cause iterator failure (except pos)
     void erase(iterator pos) {
         if(pos.curmap!=this || pos.curnode==nullptr)  throw index_out_of_bound();
         treapnode *&tmp=find_deletion(root, pos.curnode->data.first);
