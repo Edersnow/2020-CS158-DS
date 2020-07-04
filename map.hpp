@@ -29,9 +29,9 @@ public:
 
 private:
     Compare comparator;
-    //___l<r : -1___
-    //___l=r :  0___
-    //___l>r :  1___
+    //___    l<r : -1    ___
+    //___    l=r :  0    ___
+    //___    l>r :  1    ___
     inline int compare(const Key &left, const Key &right) const{
         if(comparator(left, right))  return -1;
         if(comparator(right, left))  return 1;
