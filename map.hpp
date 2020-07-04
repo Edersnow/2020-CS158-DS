@@ -91,17 +91,8 @@ private:
         delete cur;
     }
 
-    treapnode* find_node(treapnode *cur, const Key &key){
+    treapnode* find_node(treapnode *cur, const Key &key) const{
         if(cur==nullptr)  return cur;
-        switch (compare(cur->data.first, key)){
-            case 0:  return cur;
-            case 1:  return find_node(cur->left, key);
-        }
-        return find_node(cur->right, key);
-    }
-
-    const treapnode* find_node(const treapnode *cur, const Key &key) const{
-        if(cur==nullptr)  return nullptr;
         switch (compare(cur->data.first, key)){
             case 0:  return cur;
             case 1:  return find_node(cur->left, key);
